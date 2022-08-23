@@ -7,6 +7,7 @@ namespace Hotel.API.Controllers
     [ApiController]
     public class FuelController : ControllerBase
     {
+        [HttpGet("GetFuelPrice")]
         public IActionResult FuelPrice()
         {
             return Ok(new { Status = true, Data = new { Petrol_Price = 233.91, Diesel_Price = 244.44 } });
