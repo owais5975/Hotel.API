@@ -18,9 +18,6 @@ namespace Hotel.API.Controllers
         [HttpGet("GetHotel")]
         public IActionResult GetHotel()
         {
-            var data = _context.Hotels.Where(x => x.Id == 7).ToList();
-            _context.Hotels.RemoveRange(data);
-            _context.SaveChanges();
             return Ok(new {Status = true, Message = _context.Hotels.ToList()});
         }
 
