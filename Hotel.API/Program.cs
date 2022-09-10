@@ -34,11 +34,11 @@ app.UseStaticFiles();
 app.UseAuthorization();
 app.MapControllers();
 
-app.Use(async (context, next) =>
-{
-    var header = context.Request.Headers["Key"].ToString();
-    if (header.Contains(builder.Configuration.GetSection("Key").Value)) await next(context);
-    else context.Response.StatusCode = 403;
-});
+//app.Use(async (context, next) =>
+//{
+//    var header = context.Request.Headers["Key"].ToString();
+//    if (header.Contains(builder.Configuration.GetSection("Key").Value)) await next(context);
+//    else context.Response.StatusCode = 403;
+//});
 
 app.Run();
