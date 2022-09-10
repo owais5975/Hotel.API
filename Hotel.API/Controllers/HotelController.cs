@@ -48,7 +48,20 @@ namespace Hotel.API.Controllers
                 return BadRequest(new { Status = false, Message = "Hotel not added." });
             }
         }
+        
 
+        [HttpGet("BookHotel")]
+        public IActionResult BookHotel(int HotelId)
+        {
+            try
+            {
+                return Ok(new { Status = true, Message = "Hotel booked successfully." });
+            }
+            catch (Exception)
+            {
+                return BadRequest(new { Status = false, Message = "Hotel not booked." });
+            }
+        }
 
     }
 }
